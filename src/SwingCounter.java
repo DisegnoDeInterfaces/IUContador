@@ -16,18 +16,18 @@ class SwingCounter extends JFrame {
 
     SwingCounter() {
         // Obtiene el panel de contenidos (contentPane) del contenedor de nivel superior Jframe
-        // Components are added onto content pane
-        Container cp = getContentPane();
-        cp.setLayout(new FlowLayout());
+        // Los componentes son añadidos al panel de contenidos
+        Container panelContenido = getContentPane();
+        panelContenido.setLayout(new FlowLayout());
 
-        cp.add(new JLabel("Contador"));
+        panelContenido.add(new JLabel("Contador"));
         cajaTextoContar = new JTextField(contador + "", 10);
         cajaTextoContar.setEditable(false);
         cajaTextoContar.setHorizontalAlignment(JTextField.RIGHT);
-        cp.add(cajaTextoContar);
+        panelContenido.add(cajaTextoContar);
 
         botonContar = new JButton("Contar");
-        cp.add(botonContar);
+        panelContenido.add(botonContar);
 
         botonContar.addActionListener(evt -> {
             ++contador;
@@ -37,7 +37,7 @@ class SwingCounter extends JFrame {
 
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        // Exit program if Jframe's close-window button clicked
+        // Salir del programa si se pulsa en el botón de cerrar del Jframe
         setSize(300, 100);
         setTitle("Contador Swing");
         setVisible(true);    // show it
